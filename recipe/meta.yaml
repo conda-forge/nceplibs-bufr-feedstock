@@ -17,16 +17,18 @@ build:
   # removed from the standard library.
   skip: True  # [py<310 or py==312]
 
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make  # [linux]
     - cmake
-    - numpy
     - pkg-config >=0.29
   host:
     - python
