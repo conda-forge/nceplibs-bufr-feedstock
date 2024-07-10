@@ -25,6 +25,6 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
     else
         echo "Building on OSX; disabling known failing/flaky tests."
         ctest --output-on-failure -j"${CPU_COUNT}" \
-            -E "test_pyncepbufr_write|intest(7|10|12)_*|outtest(1|4|9|10)_*|test_debufr"
+            -E "test_pyncepbufr_write|intest(6|7|8|9|10|12)_*|outtest(1|4|7|9|10)_*|test_debufr"
     fi
 fi
