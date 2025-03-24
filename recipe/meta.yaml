@@ -1,5 +1,5 @@
 {% set name = "NCEPLIBS-bufr" %}
-{% set version = "12.1.0" %}
+{% set version = "12.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/NOAA-EMC/NCEPLIBS-bufr/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b5eae61b50d4132b2933b6e6dfc607e5392727cdc4f46ec7a94a19109d91dcf3
+  sha256: a0dad13b905f3e0311e2b50df47418660b47442dfc3843232712044b47f26a71
 
 build:
   # NOTE: No Windows support in initial feedstock (known use cases are only osx and linux)
@@ -27,7 +27,7 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - make  # [linux]
+    - make
     - cmake
     - pkg-config >=0.29
   host:
