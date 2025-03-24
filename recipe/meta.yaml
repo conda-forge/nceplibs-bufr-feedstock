@@ -15,7 +15,7 @@ build:
   # NOTE: Only support recent Python releases. Cannot support Python==3.12 because build
   # system in NCEPLIBS-bufr_v12.1.0 uses a hard-coded dependency on distutils, which was
   # removed from the standard library.
-  skip: true  # [py<310 or py==312]
+  skip: true  # [py<310 or py==313]
 
   number: 0
 
