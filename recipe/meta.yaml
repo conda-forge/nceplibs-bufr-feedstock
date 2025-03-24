@@ -28,7 +28,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
-    - meson
+    - meson                                  # [py>=312]
     - cmake
     - pkg-config >=0.29
   host:
