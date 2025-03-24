@@ -27,7 +27,7 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - make  # [linux]
+    - make
     - cmake
     - pkg-config >=0.29
   host:
