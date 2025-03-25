@@ -8,15 +8,12 @@ package:
 source:
   url: https://github.com/NOAA-EMC/NCEPLIBS-bufr/archive/refs/tags/v{{ version }}.tar.gz
   sha256: a0dad13b905f3e0311e2b50df47418660b47442dfc3843232712044b47f26a71
-  patches:                      # [py>=312]
-    - patches/meson_build.patch # [py>=312]
+  patches:  # [py>=312]
+    - patches/meson_build.patch  # [py>=312]
 
 build:
   # NOTE: No Windows support in initial feedstock (known use cases are only osx and linux)
   skip: true  # [win]
-  # NOTE: Only support recent Python releases. Cannot support Python==3.12 because build
-  # system in NCEPLIBS-bufr_v12.1.0 uses a hard-coded dependency on distutils, which was
-  # removed from the standard library.
   skip: true  # [py<310 or py==313]
 
   number: 1
@@ -30,13 +27,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
-    - meson                                  # [py>=312]
+    - meson <1.5                             # [py>=312]
     - cmake
     - pkg-config >=0.29
   host:
-    - meson-python
     - python
-    - python-build
     - numpy
   run:
     - python
