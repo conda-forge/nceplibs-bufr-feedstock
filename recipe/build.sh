@@ -2,10 +2,15 @@
 
 set -ex  # Abort on error.
 
+# Explicitly point `pkg-config` to the conda-forge `pkg-config` library path to
+# fix cross-compilation issues on osx-arm64.
+export MESON_ARGS="${MESON_ARGS} --pkg-config-path=${PREFIX}/lib/pkgconfig"
+
 mkdir build
 cd build
 
 cmake \
+    -DPython3_EXECUTABLE="${PYTHON}" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
     -DENABLE_PYTHON=ON \
