@@ -1,0 +1,12 @@
+diff --git i/python/CMakeLists.txt w/python/CMakeLists.txt
+index f9e4c6c7..9833bc01 100644
+--- i/python/CMakeLists.txt
++++ w/python/CMakeLists.txt
+@@ -15,6 +15,7 @@ add_custom_command(
+   COMMAND ${Python3_EXECUTABLE}  -m "numpy.f2py"
+                    -c "${CMAKE_CURRENT_SOURCE_DIR}/_bufrlib.pyf"
+                    -m _bufrlib
++                   --backend meson
+                    -L${CMAKE_BINARY_DIR}/src
+                    -lbufr_4
+   DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/_bufrlib.pyf"

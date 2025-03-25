@@ -6,6 +6,7 @@ mkdir build
 cd build
 
 cmake \
+    -DPython3_EXECUTABLE="${PYTHON}" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
     -DENABLE_PYTHON=ON \
