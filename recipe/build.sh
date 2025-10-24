@@ -21,7 +21,10 @@ if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
     # NOTE: On osx64, disable tests that fail when building shared libraries. As a
     # kluge we check an env var set by the conda-forge build process to detect this.
     if [[ -z "${OSX_ARCH}" ]]; then
-        ctest --output-on-failure -j"${CPU_COUNT}"
+        ctest --output-on-failure -j"${CPU_COUNT}" -E "test_pyncepbufr_write"
+
+        # This test needs to run later
+        ctest --output-on-failure -j"${CPU_COUNT}" -R "test_pyncepbufr_write"
     else
         echo "Building on OSX; disabling known failing/flaky tests."
         ctest --output-on-failure -j"${CPU_COUNT}" \
