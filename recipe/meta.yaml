@@ -24,12 +24,8 @@ requirements:
     - python
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy
-    # Work around for https://github.com/NOAA-EMC/NCEPLIBS-bufr/issues/627
-    # Unit tests fail with GCC 14
-    - gfortran_linux-64 13                   # [linux and build_platform == target_platform]
-    - gcc_linux-64 13                        # [linux and build_platform == target_platform]
-    - {{ compiler('fortran') }}              # [not linux or build_platform != target_platform]
-    - {{ compiler('c') }}                    # [not linux or build_platform != target_platform]
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
     - cmake
