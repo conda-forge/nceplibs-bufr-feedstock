@@ -1,0 +1,12 @@
+--- a/numpy/f2py/_backends/_meson.py
++++ b/numpy/f2py/_backends/_meson.py
+@@ -179,7 +179,8 @@
+         subprocess.run(command, cwd=cwd, check=True)
+ 
+     def run_meson(self, build_dir: Path):
+-        setup_command = ["meson", "setup", self.meson_build_dir]
++        meson_args = os.environ.get("MESON_ARGS","").split()
++        setup_command = ["meson", "setup", *meson_args, self.meson_build_dir]
+         self._run_subprocess_command(setup_command, build_dir)
+         compile_command = ["meson", "compile", "-C", self.meson_build_dir]
+         self._run_subprocess_command(compile_command, build_dir)

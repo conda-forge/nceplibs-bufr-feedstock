@@ -12,8 +12,6 @@ source:
   patches:
         # Rename deprecated functions
       - numpy2.patch
-        # Run f2py in two stages to allow for meson cross-compiling
-      - meson-cross.patch
 
 build:
   # NOTE: No Windows support in initial feedstock (known use cases are only osx and linux)

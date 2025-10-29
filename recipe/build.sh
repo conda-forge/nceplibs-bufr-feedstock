@@ -2,6 +2,11 @@
 
 set -ex  # Abort on error.
 
+# Patch host numpy to allow cross-compile
+pushd "$BUILD_PREFIX"/lib/python3.1?/site-packages
+patch -p1 < "$RECIPE_DIR/numpy_host_meson.patch"
+popd
+
 mkdir build
 cd build
 
