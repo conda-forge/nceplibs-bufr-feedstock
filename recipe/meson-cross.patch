@@ -1,8 +1,8 @@
 diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
-index f9e4c6c7..f159e2e3 100644
+index f9e4c6c7..5585b83a 100644
 --- a/python/CMakeLists.txt
 +++ b/python/CMakeLists.txt
-@@ -9,6 +9,8 @@ file( COPY ncepbufr DESTINATION . )
+@@ -9,14 +9,20 @@ file( COPY ncepbufr DESTINATION . )
  add_custom_target(python_mod ALL)
  add_dependencies(python_mod bufr_4)
  
@@ -11,7 +11,9 @@ index f9e4c6c7..f159e2e3 100644
  add_custom_command(
    TARGET python_mod
    POST_BUILD
-@@ -17,6 +19,10 @@ add_custom_command(
+   COMMAND ${Python3_EXECUTABLE}  -m "numpy.f2py"
+-                   -c "${CMAKE_CURRENT_SOURCE_DIR}/_bufrlib.pyf"
++                   "${CMAKE_CURRENT_SOURCE_DIR}/_bufrlib.pyf"
                     -m _bufrlib
                     -L${CMAKE_BINARY_DIR}/src
                     -lbufr_4
