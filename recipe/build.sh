@@ -10,9 +10,10 @@ cmake \
     -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
     -DENABLE_PYTHON=ON \
     -DBUILD_SHARED_LIBS=ON \
+    ${CMAKE_ARGS} \
     "${SRC_DIR}"
 
-make -j"${CPU_COUNT}"
+make -j"${CPU_COUNT}" VERBOSE=1
 make install
 
 # NOTE: Guard against testing during cross-compilation builds, as the compiled
