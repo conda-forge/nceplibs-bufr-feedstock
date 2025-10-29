@@ -3,6 +3,7 @@
 set -ex  # Abort on error.
 
 # Patch host numpy to allow cross-compile
+# https://github.com/numpy/numpy/issues/28352
 pushd "$BUILD_PREFIX"/lib/python3.1?/site-packages
 patch -p1 < "$RECIPE_DIR/numpy_host_meson.patch"
 popd
@@ -18,7 +19,7 @@ cmake \
     ${CMAKE_ARGS} \
     "${SRC_DIR}"
 
-make -j"${CPU_COUNT}" VERBOSE=1
+make -j"${CPU_COUNT}"
 make install
 
 # NOTE: Guard against testing during cross-compilation builds, as the compiled
