@@ -10,7 +10,10 @@ source:
   sha256: a0dad13b905f3e0311e2b50df47418660b47442dfc3843232712044b47f26a71
 
   patches:
+        # Rename deprecated functions
       - numpy2.patch
+        # Run f2py in two stages to allow for meson cross-compiling
+      - meson-cross.patch
 
 build:
   # NOTE: No Windows support in initial feedstock (known use cases are only osx and linux)
