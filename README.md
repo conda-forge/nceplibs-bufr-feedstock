@@ -137,8 +137,8 @@ Current build status
 Current release info
 ====================
 
-| Name | Downloads | Version | Platforms |
-| --- | --- | --- | --- |
+| Name                                                                                                                            | Downloads                                                                                                                           | Version                                                                                                                           | Platforms                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-nceplibs--bufr-green.svg)](https://anaconda.org/conda-forge/nceplibs-bufr) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/nceplibs-bufr.svg)](https://anaconda.org/conda-forge/nceplibs-bufr) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/nceplibs-bufr.svg)](https://anaconda.org/conda-forge/nceplibs-bufr) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/nceplibs-bufr.svg)](https://anaconda.org/conda-forge/nceplibs-bufr) |
 
 Installing nceplibs-bufr
