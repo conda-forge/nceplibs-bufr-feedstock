@@ -9,26 +9,27 @@ source:
   url: https://github.com/NOAA-EMC/NCEPLIBS-bufr/archive/refs/tags/v{{ version }}.tar.gz
   sha256: a0dad13b905f3e0311e2b50df47418660b47442dfc3843232712044b47f26a71
 
+  patches:
+        # Rename deprecated functions
+      - numpy2.patch
+
 build:
   # NOTE: No Windows support in initial feedstock (known use cases are only osx and linux)
-  skip: true  # [win]
-  # NOTE: Only support recent Python releases. Cannot support Python==3.12 because build
-  # system in NCEPLIBS-bufr_v12.1.0 uses a hard-coded dependency on distutils, which was
-  # removed from the standard library.
-  skip: true  # [py<310 or py==312]
+  skip: true  # [win or py<310 or py==314]
 
   number: 1
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
+    - python
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
     - cmake
+    - meson
     - pkg-config >=0.29
   host:
     - python

@@ -1,4 +1,8 @@
-c_compiler_version:    # [linux]
-  - '13'               # [linux]
-cxx_compiler_version:  # [linux]
-  - '13'               # [linux]
+# Work around for https://github.com/NOAA-EMC/NCEPLIBS-bufr/issues/627
+# Unit tests fail with GCC 14
+c_compiler_version:        # [linux]
+  - '13'                   # [linux]
+cxx_compiler-version:      # [linux]
+  - '13'
+fortran_compiler_version:  # [linux]
+  - '13'                   # [linux]
