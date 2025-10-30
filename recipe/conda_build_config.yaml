@@ -2,5 +2,7 @@
 # Unit tests fail with GCC 14
 c_compiler_version:        # [linux]
   - '13'                   # [linux]
+cxx_compiler_version:      # [linux]
+  - '13'                   # [linux]
 fortran_compiler_version:  # [linux]
   - '13'                   # [linux]
