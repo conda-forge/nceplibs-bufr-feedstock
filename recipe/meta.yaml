@@ -37,6 +37,7 @@ requirements:
   run:
     - python
     - numpy
+    - libgcc >=15.2.0
 
 test:
   commands:
