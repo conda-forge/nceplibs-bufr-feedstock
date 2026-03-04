@@ -15,7 +15,7 @@ source:
 
 build:
   # NOTE: No Windows support in initial feedstock (known use cases are only osx and linux)
-  skip: true  # [win or py<310 or py==314]
+  skip: true  # [win or py<310]
 
   number: 1
 
