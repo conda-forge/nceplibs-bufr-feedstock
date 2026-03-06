@@ -13,7 +13,7 @@ build:
   # NOTE: No Windows support in initial feedstock (known use cases are only osx and linux)
   skip: true  # [win or py<310]
 
-  number: 0
+  number: 1
 
 requirements:
   build:
